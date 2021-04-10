@@ -1,0 +1,3 @@
+/*
+This is the header file that contains function prototypes and user defined data type definitions
+*/
