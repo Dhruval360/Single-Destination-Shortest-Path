@@ -37,6 +37,7 @@ This represents the graph
     - Distance value (Shortest distance from the source to that vertex calculated so far)
     - Predecessor value (Vertex id of the predecessor vertex on the path from the source to that vertex). 
 * Distance value has been used as key to perform various operations on the heap
+* As the graph is represented as an *Adjacency List* and a *Min Heap* is used for the priority queue, this implementation of Dijkstra's algorithm has a time complexity of **O(ElogV)** where E is the number of edges in the graph and V is the number of vertices in the graph.
 
 
 ## Output format
@@ -68,5 +69,5 @@ $ make Dijkstra
 
 Run the program for the given example input using:
 ```bash
-$ Dijkstra < adjacencylist.txt
+$ ./Dijkstra < adjacencylist.txt
 ```
