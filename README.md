@@ -1,8 +1,6 @@
 # Single-Destination-Shortest-Path-problem
-This is an implementation of Dijkstra’s algorithm to solve the Single Destination Shortest Path problem, i.e finding the shortest path from all the vertices to the given vertex
-
-This has been solved by inverting the input graph and converting the problem into the **Single Source Shortest Path** problem
-
+This is an implementation of Dijkstra’s algorithm to solve the Single Destination Shortest Path problem, i.e finding the shortest path from all the vertices to the given vertex.
+This has been solved by inverting the input graph and converting the problem into the **Single Source Shortest Path** problem.
 The converted problem instance is then solved using **Dijkstra's Algorithm**
 
 
@@ -27,7 +25,7 @@ The converted problem instance is then solved using **Dijkstra's Algorithm**
 ```
 This represents the graph
 
-![Graph](Graph.png)
+<img src="Graph.png" alt="Graph" style="width:230px;"/>
 
 
 ## Implementation Details
@@ -61,13 +59,9 @@ Clone the repository using:
 $ git clone https://github.com/Dhruval360/Single-Destination-Shortest-Path-problem.git
 ```
 
-Compile the program using the make utility:
+Compile the program using the make utility and run it as follows:
 
 ```bash
 $ make Dijkstra
-```
-
-Run the program for the given example input using:
-```bash
 $ ./Dijkstra < adjacencylist.txt
 ```
