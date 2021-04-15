@@ -11,3 +11,6 @@ Implementation.o: PES1UG19CS313_F.c PES1UG19CS313_H.h
 
 clean: Client.o Implementation.o Dijkstra
 	rm Client.o Implementation.o Dijkstra
+
+test: Dijkstra
+	./TestScript.sh
