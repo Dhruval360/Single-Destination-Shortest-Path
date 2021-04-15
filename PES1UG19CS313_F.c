@@ -1,13 +1,12 @@
-/*
-This file contains the definitions of the functions used
-*/
+//This file contains the definitions of the functions used
+
 #include "PES1UG19CS313_H.h"
 #include <stdlib.h>
 #include <limits.h>
 #include <stdio.h>
 
 ///////////////////////////////////////////////// Graph Functions /////////////////////////////////////////////////
-Graph* GraphInit(int n){ // Returns an  initialised graph
+Graph* GraphInit(int n){ // Returns an initialised graph
     Graph *graph = (Graph*)malloc(sizeof(Graph));  
     graph->list = (AdjacencyList*)malloc(sizeof(AdjacencyList) * n); 
     for(int i = 0; i < n; i++) graph->list[i].head = NULL; 
@@ -126,7 +125,7 @@ int HeapSize(MinHeap *h){ // Returns the current size of the heap
     return h->currentSize;
 }
 
-int HeapGetDistance(MinHeap* h, int index){ // Returns the distance of the node at the given index in the heap
+int HeapGetDistance(MinHeap* h, int index){ // Returns the current minimum distance of the node at the given index in the heap from the source 
     return h->heap[index].distance;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -143,16 +142,16 @@ void Dijkstra(Graph g, int vertex){
         Vertex *temp = g.list[nearestNode].head;
         while(temp != NULL){
             int index = HeapSearch(queue, temp->id); // Finding the position of this vertex in the MinHeap array
-            if(index < HeapSize(queue)){ // Vertex is a part of the heap
+            if(index < HeapSize(queue)){ // This vertex is a part of the heap (its minimum distance hasn't been found yet)
                 int newDistance = distance + temp->weight;
                 int oldDistance = HeapGetDistance(queue, index);
-                if(newDistance < oldDistance) HeapUpdate(queue, index, newDistance, nearestNode);
+                if(newDistance < oldDistance) HeapUpdate(queue, index, newDistance, nearestNode); // Updating the distance of this vertex as a newer minimum has been found
             }
             temp = temp->next;
         }
     }
     printPath(queue, vertex);
-    HeapDestroy(queue); // Freeing the memory alloted to the heap
+    HeapDestroy(queue); // Freeing the memory allocated to the heap
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
