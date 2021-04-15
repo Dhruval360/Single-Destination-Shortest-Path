@@ -9,14 +9,15 @@ The converted problem instance is then solved using **Dijkstra's Algorithm**
 1. *PES1UG19CS313_H.h* contains the function prototypes and user defined datatype definitions
 2. *PES1UG19CS313_F.c* contains the function definitions
 3. *PES1UG19CS313_C.c* contains the main function (Client/Driver file)
-4. *adjacencylist.txt* & *adjacencylist2.txt* contain example inputs for this program
+4. The folder *TestCases* contains example inputs and expected outputs for this program
+5. *TestScript.sh* is a script that runs the program against all the test cases present in the *Inputs* folder in *TestCases* and compares the output with the expected outputs present in the *Outputs* folder in *TestCases*
 
 ## Input format
 * Vertices are numbered 1 to n
 * First line represents number of vertices
 * This is followed by a set of atmost n lines
 * Each line starts with an integer (any integer from 1 to n in any order) which represents vertex number **(v_id)** followed by a space which is then followed by a set of **d** pairs where **d** represents the outdegree of the vertex **v_id**. First number in the pair represents neighbour vertex id and the second number represents the weight of the edge which connects the vertex to the neighbour. Weight is always a **non-negative integer**
-* Sample Input file (adjacencylist2.txt)
+* Sample Input file (TestCases/Inputs/2.txt)
 ```
 4
 1 2 4 3 5 4 5
@@ -25,7 +26,7 @@ The converted problem instance is then solved using **Dijkstra's Algorithm**
 ```
 This represents the graph
 
-<img src="Graph.png" alt="Graph" style="width:230px;"/>
+![Graph](Graph.png)
 
 
 ## Implementation Details
@@ -59,9 +60,15 @@ Clone the repository using:
 $ git clone https://github.com/Dhruval360/Single-Destination-Shortest-Path-problem.git
 ```
 
-Compile the program using the make utility and run it as follows:
+Compile the program using the *make* utility and run it as follows:
 
 ```bash
 $ make Dijkstra
-$ ./Dijkstra < adjacencylist.txt
+$ ./Dijkstra < TestCases/Inputs/1.txt
+```
+
+Test the program against all the test cases present in the *TestCases* folder as follows:
+```
+$ chmod +x ./TestScript.sh
+$ make test
 ```
