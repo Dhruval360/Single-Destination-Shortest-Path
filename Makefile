@@ -9,8 +9,8 @@ Client.o: PES1UG19CS313_C.c PES1UG19CS313_H.h
 Implementation.o: PES1UG19CS313_F.c PES1UG19CS313_H.h
 	${compiler} -c PES1UG19CS313_F.c -o Implementation.o
 
-clean: Client.o Implementation.o Dijkstra
-	rm Client.o Implementation.o Dijkstra
+clean: 
+	rm -f Client.o Implementation.o Dijkstra 
 
 test: Dijkstra
 	./TestScript.sh
